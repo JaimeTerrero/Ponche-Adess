@@ -1,0 +1,48 @@
+﻿@model List<Ponche_Adess.Domain.Models.ResumenEmpleado>
+
+@{
+    ViewData["Title"] = "Resumen de Ponches";
+}
+
+<h2>Resumen de Ponches por Empleado</h2>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Empleado</th>
+                <th>Sección</th>
+                <th>Días Totales</th>
+                <th>Días Tarde</th>
+                <th>Min. Tarde</th>
+                <th>Días Anticipados</th>
+                <th>Min. Anticipados</th>
+                <th>Horas Trabajadas</th>
+                <th>% Cumplimiento</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var emp in Model)
+            {
+                <tr>
+                    <td>@emp.Nombre (@emp.NumeroEmpleado)</td>
+                    <td>@emp.Seccion</td>
+                    <td>@emp.TotalDias</td>
+                    <td>@emp.DiasTarde</td>
+                    <td>@emp.MinutosTotalesTarde.ToString("F0")</td>
+                    <td>@emp.DiasSalidaAnticipada</td>
+                    <td>@emp.MinutosTotalesAnticipados.ToString("F0")</td>
+                    <td>@emp.HorasTrabajadasTotales.ToString("F2")</td>
+                    <td>@emp.Cumplimiento</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info">
+        No se encontraron registros para mostrar.
+    </div>
+}

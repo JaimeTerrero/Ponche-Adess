@@ -1,0 +1,15 @@
+C:\Users\jterrero\source\repos\Data-Structure\Ponche-Adess\Ponche-Adess.Application\bin\Debug\net8.0\Ponche-Adess.Application.deps.json
+C:\Users\jterrero\source\repos\Data-Structure\Ponche-Adess\Ponche-Adess.Application\bin\Debug\net8.0\Ponche-Adess.Application.dll
+C:\Users\jterrero\source\repos\Data-Structure\Ponche-Adess\Ponche-Adess.Application\bin\Debug\net8.0\Ponche-Adess.Application.pdb
+C:\Users\jterrero\source\repos\Data-Structure\Ponche-Adess\Ponche-Adess.Application\bin\Debug\net8.0\Ponche-Adess.Domain.dll
+C:\Users\jterrero\source\repos\Data-Structure\Ponche-Adess\Ponche-Adess.Application\bin\Debug\net8.0\Ponche-Adess.Domain.pdb
+C:\Users\jterrero\source\repos\Data-Structure\Ponche-Adess\Ponche-Adess.Application\obj\Debug\net8.0\Ponche-Adess.Application.csproj.AssemblyReference.cache
+C:\Users\jterrero\source\repos\Data-Structure\Ponche-Adess\Ponche-Adess.Application\obj\Debug\net8.0\Ponche-Adess.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jterrero\source\repos\Data-Structure\Ponche-Adess\Ponche-Adess.Application\obj\Debug\net8.0\Ponche-Adess.Application.AssemblyInfoInputs.cache
+C:\Users\jterrero\source\repos\Data-Structure\Ponche-Adess\Ponche-Adess.Application\obj\Debug\net8.0\Ponche-Adess.Application.AssemblyInfo.cs
+C:\Users\jterrero\source\repos\Data-Structure\Ponche-Adess\Ponche-Adess.Application\obj\Debug\net8.0\Ponche-Adess.Application.csproj.CoreCompileInputs.cache
+C:\Users\jterrero\source\repos\Data-Structure\Ponche-Adess\Ponche-Adess.Application\obj\Debug\net8.0\Ponche-A.4A3408B9.Up2Date
+C:\Users\jterrero\source\repos\Data-Structure\Ponche-Adess\Ponche-Adess.Application\obj\Debug\net8.0\Ponche-Adess.Application.dll
+C:\Users\jterrero\source\repos\Data-Structure\Ponche-Adess\Ponche-Adess.Application\obj\Debug\net8.0\refint\Ponche-Adess.Application.dll
+C:\Users\jterrero\source\repos\Data-Structure\Ponche-Adess\Ponche-Adess.Application\obj\Debug\net8.0\Ponche-Adess.Application.pdb
+C:\Users\jterrero\source\repos\Data-Structure\Ponche-Adess\Ponche-Adess.Application\obj\Debug\net8.0\ref\Ponche-Adess.Application.dll
