@@ -17,6 +17,11 @@ namespace Ponche_Adess.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            var token = HttpContext.Session.GetString("jwt");
+            if (string.IsNullOrEmpty(token))
+                return RedirectToAction("Login", "Auth");
+
+            // Si hay token, renderiza la vista
             return View();
         }
 

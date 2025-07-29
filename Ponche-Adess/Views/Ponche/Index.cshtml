@@ -1,13 +1,39 @@
 ﻿@{
     ViewData["Title"] = "Carga de Ponches";
+    var meses = new[]
+    {
+        new { Numero = 1, Nombre = "Enero" },
+        new { Numero = 2, Nombre = "Febrero" },
+        new { Numero = 3, Nombre = "Marzo" },
+        new { Numero = 4, Nombre = "Abril" },
+        new { Numero = 5, Nombre = "Mayo" },
+        new { Numero = 6, Nombre = "Junio" },
+        new { Numero = 7, Nombre = "Julio" },
+        new { Numero = 8, Nombre = "Agosto" },
+        new { Numero = 9, Nombre = "Septiembre" },
+        new { Numero = 10, Nombre = "Octubre" },
+        new { Numero = 11, Nombre = "Noviembre" },
+        new { Numero = 12, Nombre = "Diciembre" }
+    };
 }
 
-<h2>Carga de Archivo de Ponches (.xlsb)</h2>
+<h2>Carga de Archivo de Ponches (.xlsx)</h2>
 
 <form asp-action="ProcesarArchivo" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label for="archivo">Selecciona el archivo:</label>
         <input type="file" name="archivo" accept=".xlsx" class="form-control" required />
+    </div>
+
+    <div class="form-group mt-3">
+        <label for="mes">Selecciona el mes:</label>
+        <select class="form-control" name="mes" required>
+            <option value="">-- Selecciona el mes --</option>
+            @foreach (var mes in meses)
+            {
+                <option value="@mes.Numero">@mes.Nombre</option>
+            }
+        </select>
     </div>
 
     <button type="submit" class="btn btn-primary mt-3">Procesar</button>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jterrero\\Desktop\\Ponche-Adess\\Ponche-Adess.Domain\\Ponche-Adess.Domain.csproj": {}
+    "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\Ponche-Adess.Domain\\Ponche-Adess.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jterrero\\Desktop\\Ponche-Adess\\Ponche-Adess.Domain\\Ponche-Adess.Domain.csproj": {
+    "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\Ponche-Adess.Domain\\Ponche-Adess.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jterrero\\Desktop\\Ponche-Adess\\Ponche-Adess.Domain\\Ponche-Adess.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\Ponche-Adess.Domain\\Ponche-Adess.Domain.csproj",
         "projectName": "Ponche-Adess.Domain",
-        "projectPath": "C:\\Users\\jterrero\\Desktop\\Ponche-Adess\\Ponche-Adess.Domain\\Ponche-Adess.Domain.csproj",
+        "projectPath": "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\Ponche-Adess.Domain\\Ponche-Adess.Domain.csproj",
         "packagesPath": "C:\\Users\\jterrero\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jterrero\\Desktop\\Ponche-Adess\\Ponche-Adess.Domain\\obj\\",
+        "outputPath": "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\Ponche-Adess.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -49,6 +49,28 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.18, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.18, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.18, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.18, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

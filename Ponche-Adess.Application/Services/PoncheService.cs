@@ -53,9 +53,5 @@ namespace Ponche_Adess.Application.Services
 
             return resumen;
         }
-
-
-
-
     }
 }
