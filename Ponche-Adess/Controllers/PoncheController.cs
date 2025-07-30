@@ -1,17 +1,22 @@
 ﻿using ExcelDataReader;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Ponche_Adess.Application.Interfaces;
+using Ponche_Adess.Domain.Data.Models;
 using Ponche_Adess.Domain.Models;
+using System.Globalization;
 
 namespace Ponche_Adess.Controllers
 {
     public class PoncheController : Controller
     {
         private readonly IPoncheService _poncheService;
+        private readonly AppDbContext _context;
 
-        public PoncheController(IPoncheService poncheService)
+        public PoncheController(IPoncheService poncheService, AppDbContext context)
         {
             _poncheService = poncheService;
+            _context = context;
         }
 
         [HttpGet]
@@ -25,14 +30,41 @@ namespace Ponche_Adess.Controllers
             return View();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> ProcesarArchivo(IFormFile archivo)
+        [HttpGet]
+        public IActionResult MesesDisponibles()
         {
-            if (archivo == null || archivo.Length == 0)
+            var meses = _context.ResumenAsistenciaMensuals
+                .Select(r => new { r.Mes, r.Anio })
+                .Distinct()
+                .OrderByDescending(x => x.Anio)
+                .ThenByDescending(x => x.Mes)
+                .AsEnumerable()
+                .Select(x => (x.Mes, x.Anio))
+                .ToList();
+
+            return View(meses);
+        }
+
+        [HttpGet]
+        public IActionResult ResumenPorMes(int mes, int anio)
+        {
+            var resumen = _context.ResumenAsistenciaMensuals
+                .Where(r => r.Mes == mes && r.Anio == anio)
+                .ToList();
+
+            return View("Resumen", resumen); // Usa la misma vista de resumen que ya tienes
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ProcesarArchivo(IFormFile archivo, int mes)
+        {
+            if (archivo == null || archivo.Length == 0 || mes == 0)
             {
-                ViewBag.Error = "Por favor seleccione un archivo .xlsb válido.";
+                ViewBag.Error = "Debe seleccionar un archivo y un mes válido.";
                 return View("Index");
             }
+
+            var anio = DateTime.Now.Year;
 
             List<RegistroPonche> registros;
 
@@ -43,8 +75,54 @@ namespace Ponche_Adess.Controllers
 
             var resumen = _poncheService.CalcularResumen(registros);
 
-            return View("Resumen", resumen);
+            // Guardar en la tabla
+            foreach (var r in resumen)
+            {
+                var existente = await _context.ResumenAsistenciaMensuals.FirstOrDefaultAsync(x =>
+                    x.Empleado == r.Nombre.Trim().ToLower() &&
+                    x.Mes == mes &&
+                    x.Anio == anio);
+
+                if (existente != null)
+                {
+                    // Actualizar valores existentes
+                    existente.Seccion = r.Seccion;
+                    existente.DiasTotales = r.TotalDias;
+                    existente.DiasTarde = r.DiasTarde;
+                    existente.MinTarde = (int)r.MinutosTotalesTarde;
+                    existente.DiasAnticipados = r.DiasSalidaAnticipada;
+                    existente.MinAnticipados = (int)r.MinutosTotalesAnticipados;
+                    existente.HorasTrabajadas = (decimal)r.HorasTrabajadasTotales;
+                    existente.PorcCumplimiento = decimal.Parse(r.Cumplimiento.Replace("%", ""), CultureInfo.InvariantCulture);
+
+                    _context.ResumenAsistenciaMensuals.Update(existente);
+                }
+                else
+                {
+                    // Crear nuevo
+                    var nuevo = new ResumenAsistenciaMensual
+                    {
+                        Empleado = r.Nombre?.Trim(),
+                        Seccion = r.Seccion,
+                        Mes = mes,
+                        Anio = anio,
+                        DiasTotales = r.TotalDias,
+                        DiasTarde = r.DiasTarde,
+                        MinTarde = (int)r.MinutosTotalesTarde,
+                        DiasAnticipados = r.DiasSalidaAnticipada,
+                        MinAnticipados = (int)r.MinutosTotalesAnticipados,
+                        HorasTrabajadas = (decimal)r.HorasTrabajadasTotales,
+                        PorcCumplimiento = decimal.Parse(r.Cumplimiento.Replace("%", ""), CultureInfo.InvariantCulture)
+                    };
+
+                    _context.ResumenAsistenciaMensuals.Add(nuevo);
+                }
+            }
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("ResumenPorMes", new {mes, anio = DateTime.Now.Year });
         }
+
 
         private List<RegistroPonche> LeerExcel(Stream stream)
         {

@@ -3,12 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{13D10B4D-8D73-4DCA-B822-3E2AB5F8171A}|Ponche-Adess.Domain\\Ponche-Adess.Domain.csproj|c:\\users\\jterrero\\documents\\ponche-adess\\ponche-adess.domain\\data\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{13D10B4D-8D73-4DCA-B822-3E2AB5F8171A}|Ponche-Adess.Domain\\Ponche-Adess.Domain.csproj|solutionrelative:ponche-adess.domain\\data\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0E33785B-94E4-4D92-B883-2118161A67ED}|Ponche-Adess\\Ponche-Adess.csproj|c:\\users\\jterrero\\documents\\ponche-adess\\ponche-adess\\controllers\\ponchecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E33785B-94E4-4D92-B883-2118161A67ED}|Ponche-Adess\\Ponche-Adess.csproj|solutionrelative:ponche-adess\\controllers\\ponchecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E33785B-94E4-4D92-B883-2118161A67ED}|Ponche-Adess\\Ponche-Adess.csproj|c:\\users\\jterrero\\documents\\ponche-adess\\ponche-adess\\views\\ponche\\resumen.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0E33785B-94E4-4D92-B883-2118161A67ED}|Ponche-Adess\\Ponche-Adess.csproj|solutionrelative:ponche-adess\\views\\ponche\\resumen.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E33785B-94E4-4D92-B883-2118161A67ED}|Ponche-Adess\\Ponche-Adess.csproj|c:\\users\\jterrero\\documents\\ponche-adess\\ponche-adess\\views\\ponche\\mesesdisponibles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0E33785B-94E4-4D92-B883-2118161A67ED}|Ponche-Adess\\Ponche-Adess.csproj|solutionrelative:ponche-adess\\views\\ponche\\mesesdisponibles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{13D10B4D-8D73-4DCA-B822-3E2AB5F8171A}|Ponche-Adess.Domain\\Ponche-Adess.Domain.csproj|c:\\users\\jterrero\\documents\\ponche-adess\\ponche-adess.domain\\data\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{13D10B4D-8D73-4DCA-B822-3E2AB5F8171A}|Ponche-Adess.Domain\\Ponche-Adess.Domain.csproj|solutionrelative:ponche-adess.domain\\data\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13D10B4D-8D73-4DCA-B822-3E2AB5F8171A}|Ponche-Adess.Domain\\Ponche-Adess.Domain.csproj|c:\\users\\jterrero\\documents\\ponche-adess\\ponche-adess.domain\\data\\models\\resumenasistenciamensual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13D10B4D-8D73-4DCA-B822-3E2AB5F8171A}|Ponche-Adess.Domain\\Ponche-Adess.Domain.csproj|solutionrelative:ponche-adess.domain\\data\\models\\resumenasistenciamensual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E33785B-94E4-4D92-B883-2118161A67ED}|Ponche-Adess\\Ponche-Adess.csproj|c:\\users\\jterrero\\documents\\ponche-adess\\ponche-adess\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0E33785B-94E4-4D92-B883-2118161A67ED}|Ponche-Adess\\Ponche-Adess.csproj|solutionrelative:ponche-adess\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E33785B-94E4-4D92-B883-2118161A67ED}|Ponche-Adess\\Ponche-Adess.csproj|c:\\users\\jterrero\\documents\\ponche-adess\\ponche-adess\\views\\ponche\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0E33785B-94E4-4D92-B883-2118161A67ED}|Ponche-Adess\\Ponche-Adess.csproj|solutionrelative:ponche-adess\\views\\ponche\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8D6D91A-1695-4E59-AFDA-B6A5C045096B}|Ponche-Adess.Application\\Ponche-Adess.Application.csproj|c:\\users\\jterrero\\documents\\ponche-adess\\ponche-adess.application\\services\\poncheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8D6D91A-1695-4E59-AFDA-B6A5C045096B}|Ponche-Adess.Application\\Ponche-Adess.Application.csproj|solutionrelative:ponche-adess.application\\services\\poncheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13D10B4D-8D73-4DCA-B822-3E2AB5F8171A}|Ponche-Adess.Domain\\Ponche-Adess.Domain.csproj|c:\\users\\jterrero\\documents\\ponche-adess\\ponche-adess.domain\\data\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13D10B4D-8D73-4DCA-B822-3E2AB5F8171A}|Ponche-Adess.Domain\\Ponche-Adess.Domain.csproj|solutionrelative:ponche-adess.domain\\data\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,21 +46,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 25,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\Ponche-Adess.Domain\\Data\\Models\\Usuario.cs",
-              "RelativeDocumentMoniker": "Ponche-Adess.Domain\\Data\\Models\\Usuario.cs",
-              "ToolTip": "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\Ponche-Adess.Domain\\Data\\Models\\Usuario.cs",
-              "RelativeToolTip": "Ponche-Adess.Domain\\Data\\Models\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-29T18:27:27.959Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -112,12 +127,112 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Resumen.cshtml",
+              "DocumentMoniker": "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\Ponche-Adess\\Views\\Ponche\\Resumen.cshtml",
+              "RelativeDocumentMoniker": "Ponche-Adess\\Views\\Ponche\\Resumen.cshtml",
+              "ToolTip": "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\Ponche-Adess\\Views\\Ponche\\Resumen.cshtml",
+              "RelativeToolTip": "Ponche-Adess\\Views\\Ponche\\Resumen.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-30T17:12:27.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MesesDisponibles.cshtml",
+              "DocumentMoniker": "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\Ponche-Adess\\Views\\Ponche\\MesesDisponibles.cshtml",
+              "RelativeDocumentMoniker": "Ponche-Adess\\Views\\Ponche\\MesesDisponibles.cshtml",
+              "ToolTip": "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\Ponche-Adess\\Views\\Ponche\\MesesDisponibles.cshtml",
+              "RelativeToolTip": "Ponche-Adess\\Views\\Ponche\\MesesDisponibles.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-30T15:28:39.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\Ponche-Adess\\appsettings.json",
+              "RelativeDocumentMoniker": "Ponche-Adess\\appsettings.json",
+              "ToolTip": "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\Ponche-Adess\\appsettings.json",
+              "RelativeToolTip": "Ponche-Adess\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAADDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-30T13:42:25.389Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ResumenAsistenciaMensual.cs",
+              "DocumentMoniker": "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\Ponche-Adess.Domain\\Data\\Models\\ResumenAsistenciaMensual.cs",
+              "RelativeDocumentMoniker": "Ponche-Adess.Domain\\Data\\Models\\ResumenAsistenciaMensual.cs",
+              "ToolTip": "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\Ponche-Adess.Domain\\Data\\Models\\ResumenAsistenciaMensual.cs",
+              "RelativeToolTip": "Ponche-Adess.Domain\\Data\\Models\\ResumenAsistenciaMensual.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T13:35:57.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\Ponche-Adess\\Views\\Ponche\\Index.cshtml",
+              "RelativeDocumentMoniker": "Ponche-Adess\\Views\\Ponche\\Index.cshtml",
+              "ToolTip": "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\Ponche-Adess\\Views\\Ponche\\Index.cshtml",
+              "RelativeToolTip": "Ponche-Adess\\Views\\Ponche\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-30T13:26:57.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PoncheService.cs",
+              "DocumentMoniker": "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\Ponche-Adess.Application\\Services\\PoncheService.cs",
+              "RelativeDocumentMoniker": "Ponche-Adess.Application\\Services\\PoncheService.cs",
+              "ToolTip": "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\Ponche-Adess.Application\\Services\\PoncheService.cs",
+              "RelativeToolTip": "Ponche-Adess.Application\\Services\\PoncheService.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T13:20:16.327Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PoncheController.cs",
+              "DocumentMoniker": "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\Ponche-Adess\\Controllers\\PoncheController.cs",
+              "RelativeDocumentMoniker": "Ponche-Adess\\Controllers\\PoncheController.cs",
+              "ToolTip": "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\Ponche-Adess\\Controllers\\PoncheController.cs",
+              "RelativeToolTip": "Ponche-Adess\\Controllers\\PoncheController.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAcwHoAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T12:58:41.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\Ponche-Adess.Domain\\Data\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "Ponche-Adess.Domain\\Data\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\Ponche-Adess.Domain\\Data\\Models\\Usuario.cs",
+              "RelativeToolTip": "Ponche-Adess.Domain\\Data\\Models\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T18:27:27.959Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\Ponche-Adess.Domain\\Data\\Models\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Ponche-Adess.Domain\\Data\\Models\\AppDbContext.cs",
               "ToolTip": "C:\\Users\\jterrero\\Documents\\Ponche-Adess\\Ponche-Adess.Domain\\Data\\Models\\AppDbContext.cs",
               "RelativeToolTip": "Ponche-Adess.Domain\\Data\\Models\\AppDbContext.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAywBcAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAA5wBcAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-28T15:10:48.438Z",
               "EditorCaption": ""

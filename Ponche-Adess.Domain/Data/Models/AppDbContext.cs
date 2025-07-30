@@ -23,7 +23,6 @@ public partial class AppDbContext : DbContext
     public virtual DbSet<Role> Roles { get; set; }
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
-
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Password=Des@rrollo2024;User ID=UserDesarrollo;TrustServerCertificate=True;Initial Catalog=ControlAsistenciaADESS;Data Source=172.22.95.29;MultipleActiveResultSets=true");
@@ -36,10 +35,12 @@ public partial class AppDbContext : DbContext
 
             entity.ToTable("ResumenAsistenciaMensual");
 
-            entity.HasIndex(e => new { e.EmpleadoId, e.Mes, e.Anio }, "UQ_EmpleadoPeriodo").IsUnique();
+            //entity.HasIndex(e => new { e.Empleado, e.Mes, e.Anio }, "UQ_EmpleadoPeriodo").IsUnique();
 
             entity.Property(e => e.ResumenId).HasColumnName("ResumenID");
-            entity.Property(e => e.EmpleadoId).HasColumnName("EmpleadoID");
+            entity.Property(e => e.Empleado)
+                .HasMaxLength(250)
+                .IsUnicode(false);
             entity.Property(e => e.HorasTrabajadas).HasColumnType("decimal(5, 2)");
             entity.Property(e => e.PorcCumplimiento).HasColumnType("decimal(5, 2)");
             entity.Property(e => e.Seccion).HasMaxLength(100);

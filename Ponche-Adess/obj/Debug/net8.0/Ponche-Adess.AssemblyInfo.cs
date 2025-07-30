@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ponche-Adess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ccb792f2fa1c93ba4efbebc6680c090c22a72ba")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d3e4ab32bc0ddf0e97d2a128661e096d47dee5e5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ponche-Adess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ponche-Adess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

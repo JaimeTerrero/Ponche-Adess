@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace Ponche_Adess.Domain.Data.Models;
 
 public partial class ResumenAsistenciaMensual
 {
-    [Key]
     public int ResumenId { get; set; }
-
-    public int EmpleadoId { get; set; }
 
     public string Seccion { get; set; } = null!;
 
@@ -30,4 +26,6 @@ public partial class ResumenAsistenciaMensual
     public int Mes { get; set; }
 
     public int Anio { get; set; }
+
+    public string Empleado { get; set; } = null!;
 }

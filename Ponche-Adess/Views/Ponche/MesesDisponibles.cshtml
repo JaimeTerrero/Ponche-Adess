@@ -1,0 +1,31 @@
+﻿@model List<(int Mes, int Anio)>
+
+@{
+    ViewData["Title"] = "Métricas por Mes";
+    string[] nombresMeses = { "", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+                              "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" };
+}
+
+<h2 class="mb-4">Métricas Disponibles por Mes</h2>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm border-primary h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title">@nombresMeses[item.Mes]</h5>
+                    <p class="card-text">@item.Anio</p>
+                    <a asp-action="ResumenPorMes" asp-route-mes="@item.Mes" asp-route-anio="@item.Anio" class="btn btn-primary">Ver Resumen</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-warning mt-3">
+        No hay métricas cargadas aún.
+    </div>
+}
