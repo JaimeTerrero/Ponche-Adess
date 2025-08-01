@@ -31,7 +31,7 @@ namespace Ponche_Adess.Controllers
 
             // Guardar el token en sesión o cookie
             HttpContext.Session.SetString("jwt", result.Token);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("MesesDisponibles", "Ponche");
         }
 
         [HttpGet]

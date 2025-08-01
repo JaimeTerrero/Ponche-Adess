@@ -8,15 +8,44 @@
 
 <h2 class="mb-4">Métricas Disponibles por Mes</h2>
 
+<form asp-action="EmpleadoResumen" method="get" class="row g-2 mb-4">
+    <div class="col-md-6">
+        <input type="text" name="empleado" class="form-control" placeholder="Buscar empleado (nombre completo o parte)" required />
+    </div>
+    <div class="col-md-3">
+        <button type="submit" class="btn btn-primary w-100">Buscar</button>
+    </div>
+</form>
+
 <div class="row">
     @foreach (var item in Model)
     {
         <div class="col-md-3 mb-4">
             <div class="card shadow-sm border-primary h-100">
-                <div class="card-body text-center">
+                <div class="card-body text-center d-flex flex-column">
                     <h5 class="card-title">@nombresMeses[item.Mes]</h5>
                     <p class="card-text">@item.Anio</p>
-                    <a asp-action="ResumenPorMes" asp-route-mes="@item.Mes" asp-route-anio="@item.Anio" class="btn btn-primary">Ver Resumen</a>
+
+                    <div class="mt-auto">
+                        <a asp-action="ResumenPorMes"
+                           asp-route-mes="@item.Mes"
+                           asp-route-anio="@item.Anio"
+                           class="btn btn-primary me-2">
+                            Ver Resumen
+                        </a>
+
+                        <form asp-action="EliminarMes" method="post"
+                              class="d-inline js-delete-mes"
+                              data-mes="@item.Mes" data-anio="@item.Anio"
+                              data-nombremes="@nombresMeses[item.Mes]">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="mes" value="@item.Mes" />
+                            <input type="hidden" name="anio" value="@item.Anio" />
+                            <button type="submit" class="btn btn-outline-danger">
+                                Eliminar
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -28,4 +57,48 @@
     <div class="alert alert-warning mt-3">
         No hay métricas cargadas aún.
     </div>
+}
+
+@section Scripts {
+    <script>
+        // Confirmación con SweetAlert2
+        document.querySelectorAll('.js-delete-mes').forEach(function (form) {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const mes = form.dataset.mes;
+                const anio = form.dataset.anio;
+                const nombreMes = form.dataset.nombremes;
+
+                Swal.fire({
+                    title: '¿Eliminar métricas?',
+                    html: `Se borrarán <b>todas</b> las métricas de <b>${nombreMes} ${anio}</b>.`,
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Sí, eliminar',
+                    cancelButtonText: 'Cancelar',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit();
+                    }
+                });
+            });
+        });
+
+        // Toast de éxito si viene mensaje desde el servidor
+        @if (TempData["Mensaje"] is string msg && !string.IsNullOrWhiteSpace(msg))
+        {
+                <text>
+                Swal.fire({
+                    toast: true,
+                    position: 'top-end',
+                    icon: 'success',
+                    title: '@msg'.replace(/'/g, "\\'"),
+                    showConfirmButton: false,
+                    timer: 2500,
+                    timerProgressBar: true
+                });
+                </text>
+        }
+    </script>
 }

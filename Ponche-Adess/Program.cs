@@ -23,6 +23,8 @@ builder.Services.AddSession(options =>
 builder.Services.AddScoped<IPoncheService, PoncheService>();
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 

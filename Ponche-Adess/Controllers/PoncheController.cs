@@ -34,15 +34,83 @@ namespace Ponche_Adess.Controllers
         public IActionResult MesesDisponibles()
         {
             var meses = _context.ResumenAsistenciaMensuals
-                .Select(r => new { r.Mes, r.Anio })
-                .Distinct()
-                .OrderByDescending(x => x.Anio)
-                .ThenByDescending(x => x.Mes)
-                .AsEnumerable()
-                .Select(x => (x.Mes, x.Anio))
-                .ToList();
+            .Select(r => new { r.Mes, r.Anio })
+            .Distinct()
+            .OrderByDescending(x => x.Anio) // año más reciente primero
+            .ThenBy(x => x.Mes)             // meses de 1..12 (Enero primero)
+            .AsEnumerable()
+            .Select(x => (x.Mes, x.Anio))
+            .ToList();
 
             return View(meses);
+        }
+
+        // GET: /Ponche/EmpleadoResumen?empleado=Daniel%20Medina
+        [HttpGet]
+        public IActionResult EmpleadoResumen(string empleado)
+        {
+            if (string.IsNullOrWhiteSpace(empleado))
+                return RedirectToAction(nameof(MesesDisponibles));
+
+            var nombre = empleado.Trim().ToLower();
+
+            var registros = _context.ResumenAsistenciaMensuals
+                .Where(x => x.Empleado.ToLower().Trim() == nombre)
+                .OrderByDescending(x => x.Anio)
+                .ThenBy(x => x.Mes)
+                .ToList();
+
+            // Si no hay métricas exactas por coincidencia estricta,
+            // intenta búsqueda contains (útil cuando el usuario no teclea el nombre completo)
+            if (registros.Count == 0)
+            {
+                registros = _context.ResumenAsistenciaMensuals
+                    .Where(x => x.Empleado.ToLower().Contains(nombre))
+                    .OrderByDescending(x => x.Anio)
+                    .ThenBy(x => x.Mes)
+                    .ToList();
+            }
+
+            ViewBag.EmpleadoBuscado = empleado;
+            return View("EmpleadoResumen", registros);
+        }
+
+        // (Opcional) Sugerencias rápidas de empleados: /Ponche/BuscarEmpleados?q=dan
+        [HttpGet]
+        public IActionResult BuscarEmpleados(string q)
+        {
+            if (string.IsNullOrWhiteSpace(q)) return Json(Array.Empty<string>());
+
+            var query = q.Trim().ToLower();
+
+            var empleados = _context.ResumenAsistenciaMensuals
+                .Where(x => x.Empleado.ToLower().Contains(query))
+                .Select(x => x.Empleado)
+                .Distinct()
+                .OrderBy(x => x)
+                .Take(10)
+                .ToList();
+
+            return Json(empleados);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EliminarMes(int mes, int anio)
+        {
+            // (Opcional) seguridad básica: solo años razonables
+            if (mes < 1 || mes > 12 || anio < 2000)
+                return BadRequest();
+
+            var registros = _context.ResumenAsistenciaMensuals
+                .Where(r => r.Mes == mes && r.Anio == anio);
+
+            _context.ResumenAsistenciaMensuals.RemoveRange(registros);
+            await _context.SaveChangesAsync();
+
+            TempData["Mensaje"] = $"Se eliminaron las métricas de {mes}/{anio}.";
+            return RedirectToAction(nameof(MesesDisponibles));
         }
 
         [HttpGet]

@@ -1,0 +1,66 @@
+﻿@model List<Ponche_Adess.Domain.Data.Models.ResumenAsistenciaMensual>
+@{
+    ViewData["Title"] = "Métricas del Empleado";
+    string empleado = ViewBag.EmpleadoBuscado as string ?? (Model.FirstOrDefault()?.Empleado ?? "");
+    string MesNombre(int m) => m >= 1 && m <= 12
+        ? new System.Globalization.CultureInfo("es-ES").DateTimeFormat.GetMonthName(m)
+        : "Mes inválido";
+}
+
+<h2 class="mb-3">Métricas de: <strong>@empleado</strong></h2>
+
+@if (Model != null && Model.Any())
+{
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th style="white-space:nowrap">Mes/Año</th>
+                    <th>Sección</th>
+                    <th style="white-space:nowrap">Días Totales</th>
+                    <th style="white-space:nowrap">Días Tarde</th>
+                    <th style="white-space:nowrap">Min. Tarde</th>
+                    <th style="white-space:nowrap">Días Anticipados</th>
+                    <th style="white-space:nowrap">Min. Anticipados</th>
+                    <th style="white-space:nowrap">Horas Trabajadas</th>
+                    <th style="white-space:nowrap">% Cumplimiento</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var r in Model.OrderByDescending(x => x.Anio).ThenBy(x => x.Mes))
+                {
+                    <tr>
+                        <td>@MesNombre(r.Mes) @r.Anio</td>
+                        <td>@r.Seccion</td>
+                        <td>@r.DiasTotales</td>
+                        <td>@r.DiasTarde</td>
+                        <td>@r.MinTarde</td>
+                        <td>@r.DiasAnticipados</td>
+                        <td>@r.MinAnticipados</td>
+                        <td>@r.HorasTrabajadas.ToString("F2")</td>
+                        <td>@r.PorcCumplimiento.ToString("F2")%</td>
+                        <td class="text-end">
+                            <a asp-action="ResumenPorMes"
+                               asp-route-mes="@r.Mes"
+                               asp-route-anio="@r.Anio"
+                               class="btn btn-sm btn-outline-primary">
+                                Ver mes
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="alert alert-warning">
+        No se encontraron métricas para “@empleado”.
+    </div>
+}
+
+<div class="mt-3">
+    <a asp-action="MesesDisponibles" class="btn btn-secondary">← Volver a meses</a>
+</div>
